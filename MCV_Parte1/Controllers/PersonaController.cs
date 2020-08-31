@@ -13,10 +13,14 @@ namespace MCV_Parte1.Controllers
         public ActionResult Persona()
         {
             ClsPersona obj = new ClsPersona();
-            obj.edad = 26;
-            obj.nombre = "Andree";
-            obj.apellido = "Velasco";
+            obj.edad = Convert.ToInt32(Request.Form["edad"]);
+            obj.nombre = Request.Form["nombre"].ToString();
+            obj.apellido = Request.Form["apellido"].ToString();
             return View(obj);
-        }  
+        }
+        public ActionResult Index()
+        {          
+            return View();
+        }
     }
 }
